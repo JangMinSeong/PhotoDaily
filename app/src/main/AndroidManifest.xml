@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PhotoDaily">
+        <activity
+            android:name=".TabNavigator"
+            android:label="@string/title_activity_tab_navigator"
+            android:theme="@style/Theme.PhotoDaily.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

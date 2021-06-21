@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PhotoDaily</string>
+    <string name="title_activity_day_diary">DayDiary</string>
+
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+
+    <string name="title_activity_tab_navigator">TabNavigator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_day">Hello day fragment</string>
+    <string name="hello_travel">Hello travel fragment</string>
 </resources>
