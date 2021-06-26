@@ -1,11 +1,23 @@
 package com.example.photodaily.ui.main
 
+import android.content.Intent
+import android.content.res.Resources
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.core.view.MotionEventCompat
+import androidx.fragment.app.Fragment
 import com.example.photodaily.R
+import kotlinx.android.synthetic.main.fragment_travel_diary.view.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +34,7 @@ class TravelDiary : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +48,34 @@ class TravelDiary : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_travel_diary, container, false)
+
+        val rootView = inflater.inflate(R.layout.fragment_travel_diary, container, false)
+
+        val resources: Resources = this.resources
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.travel_daegu_icon)
+
+        //버튼 클릭 좌표 계산
+        rootView.travel_btn.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event:MotionEvent):Boolean {
+                if(event.action == MotionEvent.ACTION_DOWN) {
+                    var iX = event.getX()
+                    var iY = event.getY()
+
+                    if(bitmap.getPixel(iX.toInt(), iY.toInt()) != 0)   //클릭 좌표 != 0 --> 투명한 부분이 아닐 경우
+                        activity?.let{
+                            val intent = Intent(context, TravelSelectRegion::class.java)
+                            startActivity(intent)
+                        }
+                        rootView.travel_btn.setColorFilter(Color.parseColor("#55ff0000"))
+
+
+                }
+                return true
+            }
+        })
+
+
+        return rootView
     }
 
     companion object {
@@ -56,5 +96,10 @@ class TravelDiary : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun getURLForResource(resId: Int): String? {
+        return Uri.parse("android.resource://" + R::class.java.getPackage().getName() + "/" + resId)
+            .toString()
     }
 }

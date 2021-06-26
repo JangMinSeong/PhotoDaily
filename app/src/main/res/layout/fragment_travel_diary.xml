@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,5 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_travel" />
+
+    <ImageView
+        android:id="@+id/travel_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/travel_map" />
+
+    <ImageButton
+        android:id="@+id/travel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/travel_daegu_icon"
+        app:tint="@android:color/holo_red_dark" />
+
 
 </FrameLayout>
