@@ -1,10 +1,12 @@
-package com.example.photodaily.ui.main
+package com.example.photodaily.adpater
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.photodaily.R
+import com.example.photodaily.ui.main.DayDiary
+import com.example.photodaily.ui.main.TravelDiary
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,

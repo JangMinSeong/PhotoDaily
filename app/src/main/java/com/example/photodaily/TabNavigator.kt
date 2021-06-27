@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.example.photodaily.ui.main.SectionsPagerAdapter
+import com.example.photodaily.adpater.SectionsPagerAdapter
 import com.example.photodaily.databinding.ActivityTabNavigatorBinding
 
 class TabNavigator : AppCompatActivity() {

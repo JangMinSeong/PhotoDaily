@@ -1,4 +1,4 @@
-package com.example.photodaily.ui.main
+package com.example.photodaily.adpater
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,21 +9,23 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.photodaily.DayPhotoData
+import com.bumptech.glide.Glide
 import com.example.photodaily.R
+import com.example.photodaily.data.Photo
+import com.example.photodaily.ui.main.DayDiaryOne
 
-class DayAdapter(val dayList : ArrayList<DayPhotoData>) : RecyclerView.Adapter<DayAdapter.CustomViewHolder>() {
+class DayAdapter(val dayList : List<Photo>) : RecyclerView.Adapter<DayAdapter.CustomViewHolder>() {
 
     //뷰홀더가 처음 생성될때
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayAdapter.CustomViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_day, parent, false)
         return CustomViewHolder(view).apply { //클릭시 액션
             itemView.setOnClickListener { //여기서 itemview는 뷰홀더의 아이템들을 의미한다.
                 val curPos: Int = adapterPosition //누른 뷰의 순서값
-                val profile: DayPhotoData = dayList.get(curPos) //객체형태로 번호에 맞게 가져오기
+                val profile: Photo = dayList.get(curPos) //객체형태로 번호에 맞게 가져오기
                 Toast.makeText(
                     parent.context,
-                    "이름 : ${profile.name}",
+                    "이름 : ${profile.subject}",
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -32,12 +34,14 @@ class DayAdapter(val dayList : ArrayList<DayPhotoData>) : RecyclerView.Adapter<D
     }
 
     //재활용해주는 곳 및 값을 넣어주는 곳
-    override fun onBindViewHolder(holder: DayAdapter.CustomViewHolder, position: Int) {
-        holder.profile.setImageResource(dayList.get(position).img)
-        holder.name.text = dayList.get(position).name
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+        val photo : Photo = dayList.get(position)
+        Glide.with(holder.itemView).load(R.drawable.test).into(holder.profile)
+        //holder.profile.setImageResource(dayList.get(position).photo)
+        holder.name.text = dayList.get(position).subject
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView?.context, DayDiaryOne::class.java)
-            intent.putExtra("ID", dayList.get(position).name)
+            val intent = Intent(holder.itemView.context, DayDiaryOne::class.java)
+            intent.putExtra("ID", dayList.get(position).subject)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     }

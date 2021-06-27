@@ -1,14 +1,17 @@
 package com.example.photodaily.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.photodaily.DayPhotoData
 import com.example.photodaily.R
+import com.example.photodaily.adpater.DayAdapter
+import com.example.photodaily.data.Photo
+import com.example.photodaily.data.PhotoDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +27,7 @@ class DayDiary : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var db : PhotoDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,17 +42,14 @@ class DayDiary : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val dayList = arrayListOf(
-            DayPhotoData("test1", R.drawable.test),
-            DayPhotoData("test2", R.drawable.test),
-            DayPhotoData("tdlest3", R.drawable.test),
-            DayPhotoData("test4", R.drawable.test)
 
-        )
-        var rootView = inflater.inflate(R.layout.fragment_day_diary,container,false)
+    ): View? {
+        db = PhotoDatabase.getinstance(requireContext())!!
+        val dayList = db.photoDao().getAll()
+        Log.d("jeongjin", "onCreateView:" + dayList.size)
+        val rootView = inflater.inflate(R.layout.fragment_day_diary,container,false)
         // Inflate the layout for this fragment
-        recyclerView = rootView.findViewById(R.id.recyclerView!!)as RecyclerView
+        recyclerView = rootView.findViewById(R.id.recyclerView)as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = DayAdapter(dayList)
         return rootView
