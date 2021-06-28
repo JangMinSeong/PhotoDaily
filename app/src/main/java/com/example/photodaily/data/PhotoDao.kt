@@ -16,4 +16,6 @@ interface PhotoDao {
     @Query("SELECT * from photo")
     fun getAll() : List<Photo>
 
+    @Query("DELETE from photo")
+    fun deleteAll()
 }
