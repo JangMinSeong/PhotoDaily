@@ -12,21 +12,10 @@
         android:layout_height="match_parent"
         android:text="@string/hello_travel" />
 
-    <ImageView
-        android:id="@+id/travel_map"
-        android:layout_width="wrap_content"
+    <include
+        layout="@layout/item_travel_map"
         android:layout_height="wrap_content"
-        android:src="@drawable/travel_map" />
-
-    <ImageButton
-        android:id="@+id/travel_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/travel_daegu_icon"
-        app:tint="@android:color/holo_red_dark" />
+        android:layout_width="wrap_content" />
 
 
 </FrameLayout>

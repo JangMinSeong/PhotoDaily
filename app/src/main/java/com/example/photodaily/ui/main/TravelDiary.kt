@@ -16,7 +16,7 @@ import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.view.MotionEventCompat
 import androidx.fragment.app.Fragment
 import com.example.photodaily.R
-import kotlinx.android.synthetic.main.fragment_travel_diary.view.*
+import kotlinx.android.synthetic.main.item_travel_map.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -51,29 +51,7 @@ class TravelDiary : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_travel_diary, container, false)
 
-        val resources: Resources = this.resources
-        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.travel_daegu_icon)
-
-        //버튼 클릭 좌표 계산
-        rootView.travel_btn.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event:MotionEvent):Boolean {
-                if(event.action == MotionEvent.ACTION_DOWN) {
-                    var iX = event.getX()
-                    var iY = event.getY()
-
-                    if(bitmap.getPixel(iX.toInt(), iY.toInt()) != 0)   //클릭 좌표 != 0 --> 투명한 부분이 아닐 경우
-                        activity?.let{
-                            val intent = Intent(context, TravelSelectRegion::class.java)
-                            startActivity(intent)
-                        }
-                        rootView.travel_btn.setColorFilter(Color.parseColor("#55ff0000"))
-
-
-                }
-                return true
-            }
-        })
-
+        makeMap(rootView)
 
         return rootView
     }
@@ -101,5 +79,59 @@ class TravelDiary : Fragment() {
     private fun getURLForResource(resId: Int): String? {
         return Uri.parse("android.resource://" + R::class.java.getPackage().getName() + "/" + resId)
             .toString()
+    }
+
+    private fun makeMap(rootView: View) {
+
+
+        val resources: Resources = this.resources
+
+        //Daegu
+        rootView.travel_daegu_btn.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event:MotionEvent):Boolean {
+
+                if(event.action == MotionEvent.ACTION_DOWN) {
+
+                    val bitmap = BitmapFactory.decodeResource(resources, R.drawable.travel_daegu_icon)
+
+                    var iX = event.getX()
+                    var iY = event.getY()
+
+                    if(bitmap.getPixel(iX.toInt(), iY.toInt()) != 0)   //클릭 좌표 != 0 --> 투명한 부분이 아닐 경우
+                        activity?.let{
+
+                            rootView.travel_daegu_btn.setColorFilter(Color.parseColor("#55ff0000"))
+
+                            val intent = Intent(context, TravelSelectRegion::class.java)
+                            startActivity(intent)
+                        }
+                }
+                return true
+            }
+        })
+
+        //Gyeongsan
+        rootView.travel_gyeongsan_btn.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event:MotionEvent):Boolean {
+
+                if(event.action == MotionEvent.ACTION_DOWN) {
+
+                    val bitmap = BitmapFactory.decodeResource(resources, R.drawable.travel_gyeongsan_icon)
+
+                    var iX = event.getX()
+                    var iY = event.getY()
+
+                    if(bitmap.getPixel(iX.toInt(), iY.toInt()) != 0)   //클릭 좌표 != 0 --> 투명한 부분이 아닐 경우
+                        activity?.let{
+
+                            rootView.travel_gyeongsan_btn.setColorFilter(Color.parseColor("#55ff0000"))
+
+                            val intent = Intent(context, TravelSelectRegion::class.java)
+                            startActivity(intent)
+                        }
+                }
+                return true
+            }
+        })
     }
 }
