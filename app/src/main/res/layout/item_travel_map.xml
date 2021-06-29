@@ -5,48 +5,35 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <ImageView
-            android:id="@+id/travel_map"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/travel_map_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:src="@drawable/travel_map_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/travel_gyeongsan_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="216dp"
-            android:layout_marginBottom="340dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:scaleType="centerCrop"
             android:src="@drawable/travel_gyeongsan_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:tint="@color/lite_blue" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/travel_daegu_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="124dp"
-            android:layout_marginBottom="320dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:scaleType="centerCrop"
             android:src="@drawable/travel_daegu_icon"
-            app:tint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/black" />
 
 
 </FrameLayout>
