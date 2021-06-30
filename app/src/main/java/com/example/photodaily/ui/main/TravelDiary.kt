@@ -13,9 +13,12 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.MotionEventCompat
+import androidx.core.view.drawToBitmap
 import androidx.fragment.app.Fragment
 import com.example.photodaily.R
 import kotlinx.android.synthetic.main.fragment_travel_diary.view.*
@@ -116,18 +119,14 @@ class TravelDiary : Fragment() {
 
     private fun findView(aX:Float, aY:Float) {
 
-        var resources: Resources = this.resources
-
         for(i in arr_region) {
-            var bitmap = BitmapFactory.decodeResource(resources, i.second)
+
+            var bitmap = i.first.drawToBitmap()
 
             if(bitmap.getPixel(aX.toInt(), aY.toInt()) != 0) {
                 Log.d("test","123123")
                 i.first.setColorFilter(Color.parseColor("#55523000"))
 
-                val intent = Intent(context, TravelSelectRegion::class.java)
-                intent.putExtra("region",i)
-                startActivity(intent)
                 break
             }
         }
