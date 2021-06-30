@@ -12,24 +12,253 @@
             android:src="@drawable/travel_map_image" />
 
         <ImageView
-            android:id="@+id/travel_gyeongsan_btn"
+            android:id="@+id/travel_gyeongsan_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/travel_gyeongsan_icon"
+            android:src="@drawable/travel_gyeongsan"
             android:scaleType="fitCenter"
             app:tint="@color/lite_blue" />
 
         <ImageView
-            android:id="@+id/travel_daegu_btn"
+            android:id="@+id/travel_daegu_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/travel_daegu_icon"
+            android:src="@drawable/travel_daegu"
             android:scaleType="fitCenter"
             app:tint="@color/black" />
 
+        <ImageView
+            android:id="@+id/travel_chilgok_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_chilgok"
+            android:scaleType="fitCenter"
+            app:tint="@color/color2" />
+
+        <ImageView
+            android:id="@+id/travel_goryeong_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_goryeong"
+            android:scaleType="fitCenter"
+            app:tint="@color/color3" />
+
+        <ImageView
+            android:id="@+id/travel_jeju_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_jeju"
+            android:scaleType="fitCenter"
+            app:tint="@color/color4" />
+
+        <ImageView
+            android:id="@+id/travel_seogwipo_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_seogwipo"
+            android:scaleType="fitCenter"
+            app:tint="@color/color5" />
+
+        <ImageView
+            android:id="@+id/travel_seongju_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_seongju"
+            android:scaleType="fitCenter"
+            app:tint="@color/color5" />
+
+        <ImageView
+            android:id="@+id/travel_gimcheon_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_gimcheon"
+            android:scaleType="fitCenter"
+            app:tint="@color/color6" />
+
+        <ImageView
+            android:id="@+id/travel_gumi_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_gumi"
+            android:scaleType="fitCenter"
+            app:tint="@color/color7" />
+
+        <ImageView
+            android:id="@+id/travel_cheongdo_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_cheongdo"
+            android:scaleType="fitCenter"
+            app:tint="@color/color7" />
+
+        <ImageView
+            android:id="@+id/travel_gyeongju_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_gyeongju"
+            android:scaleType="fitCenter"
+            app:tint="@color/color8" />
+
+        <ImageView
+            android:id="@+id/travel_sangju_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_sangju"
+            android:scaleType="fitCenter"
+            app:tint="@color/color8" />
+
+        <ImageView
+            android:id="@+id/travel_mungyeong_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_mungyeong"
+            android:scaleType="fitCenter"
+            app:tint="@color/color2" />
+
+        <ImageView
+            android:id="@+id/travel_yeongcheon_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_yeongcheon"
+            android:scaleType="fitCenter"
+            app:tint="@color/color4" />
+
+        <ImageView
+            android:id="@+id/travel_pohang_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_pohang"
+            android:scaleType="fitCenter"
+            app:tint="@color/color3" />
+
+        <ImageView
+            android:id="@+id/travel_yeongdeok_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_yeongdeok"
+            android:scaleType="fitCenter"
+            app:tint="@color/color7" />
+
+        <ImageView
+            android:id="@+id/travel_cheongsong_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_cheongsong"
+            android:scaleType="fitCenter"
+            app:tint="@color/color1" />
+
+        <ImageView
+            android:id="@+id/travel_gunwi_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_gunwi"
+            android:scaleType="fitCenter"
+            app:tint="@color/color1" />
+
+        <ImageView
+            android:id="@+id/travel_uljin_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_uljin"
+            android:scaleType="fitCenter"
+            app:tint="@color/color1" />
+
+        <ImageView
+            android:id="@+id/travel_uiseong_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_uiseong"
+            android:scaleType="fitCenter"
+            app:tint="@color/color13" />
+
+        <ImageView
+            android:id="@+id/travel_andong_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_andong"
+            android:scaleType="fitCenter"
+            app:tint="@color/color3" />
+
+        <ImageView
+            android:id="@+id/travel_yeongyang_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_yeongyang"
+            android:scaleType="fitCenter"
+            app:tint="@color/color5" />
+
+        <ImageView
+            android:id="@+id/travel_bonghwa_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_bonghwa"
+            android:scaleType="fitCenter"
+            app:tint="@color/color12" />
+
+        <ImageView
+            android:id="@+id/travel_yeongju_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_yeongju"
+            android:scaleType="fitCenter"
+            app:tint="@color/color10" />
+
+        <ImageView
+            android:id="@+id/travel_yecheon_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/travel_yecheon"
+            android:scaleType="fitCenter"
+            app:tint="@color/color15" />
 
 </FrameLayout>

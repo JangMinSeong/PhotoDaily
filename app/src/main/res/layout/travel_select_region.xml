@@ -10,7 +10,7 @@
         android:id="@+id/imageView3"
         android:layout_width="396dp"
         android:layout_height="336dp"
-        app:srcCompat="@drawable/travel_daegu_icon" />
+        app:srcCompat="@drawable/travel_daegu" />
 
     <Button
         android:id="@+id/region_btn"

@@ -113,8 +113,37 @@ class TravelDiary : Fragment() {
     }
 
     private fun makeMap(rootView:View) {
-        arr_region.add(makePair(rootView.travel_daegu_btn, R.drawable.travel_daegu_icon))
-        arr_region.add(makePair(rootView.travel_gyeongsan_btn, R.drawable.travel_gyeongsan_icon))
+
+        ///경상북도
+        arr_region.add(makePair(rootView.travel_daegu_image, R.drawable.travel_daegu))   //대구
+        arr_region.add(makePair(rootView.travel_gyeongsan_image, R.drawable.travel_gyeongsan))  //경산
+        arr_region.add(makePair(rootView.travel_chilgok_image, R.drawable.travel_chilgok))   //칠곡
+        arr_region.add(makePair(rootView.travel_goryeong_image, R.drawable.travel_goryeong))   //고령
+        arr_region.add(makePair(rootView.travel_seongju_image, R.drawable.travel_seongju))   //성주
+        arr_region.add(makePair(rootView.travel_gimcheon_image, R.drawable.travel_gimcheon))   //김천
+        arr_region.add(makePair(rootView.travel_gumi_image, R.drawable.travel_gumi))   //구미
+        arr_region.add(makePair(rootView.travel_cheongdo_image, R.drawable.travel_cheongdo))   //청도
+        arr_region.add(makePair(rootView.travel_gyeongju_image, R.drawable.travel_gyeongju))   //경주
+        arr_region.add(makePair(rootView.travel_sangju_image, R.drawable.travel_sangju))   //상주
+        arr_region.add(makePair(rootView.travel_mungyeong_image, R.drawable.travel_mungyeong))   //문경
+        arr_region.add(makePair(rootView.travel_yeongcheon_image, R.drawable.travel_yeongcheon))   //영천
+        arr_region.add(makePair(rootView.travel_pohang_image, R.drawable.travel_pohang))   //포항
+        arr_region.add(makePair(rootView.travel_yeongdeok_image, R.drawable.travel_yeongdeok))   //영덕
+        arr_region.add(makePair(rootView.travel_cheongsong_image, R.drawable.travel_cheongsong))   //청송
+        arr_region.add(makePair(rootView.travel_gunwi_image, R.drawable.travel_gunwi))   //군위
+        arr_region.add(makePair(rootView.travel_uljin_image, R.drawable.travel_uljin))   //울진
+        arr_region.add(makePair(rootView.travel_uiseong_image, R.drawable.travel_uiseong))   //의성
+        arr_region.add(makePair(rootView.travel_andong_image, R.drawable.travel_andong))   //안동
+        arr_region.add(makePair(rootView.travel_yeongyang_image, R.drawable.travel_yeongyang))   //영양
+        arr_region.add(makePair(rootView.travel_bonghwa_image, R.drawable.travel_bonghwa))   //봉화
+        arr_region.add(makePair(rootView.travel_yeongju_image, R.drawable.travel_yeongju))   //영주
+        arr_region.add(makePair(rootView.travel_yecheon_image, R.drawable.travel_yecheon))   //예천
+
+        ///제주도
+        arr_region.add(makePair(rootView.travel_jeju_image, R.drawable.travel_jeju))   //제주
+        arr_region.add(makePair(rootView.travel_seogwipo_image, R.drawable.travel_seogwipo))   //서귀포
+
+
     }
 
     private fun findView(aX:Float, aY:Float) {
@@ -124,9 +153,7 @@ class TravelDiary : Fragment() {
             var bitmap = i.first.drawToBitmap()
 
             if(bitmap.getPixel(aX.toInt(), aY.toInt()) != 0) {
-                Log.d("test","123123")
                 i.first.setColorFilter(Color.parseColor("#55523000"))
-
                 break
             }
         }
